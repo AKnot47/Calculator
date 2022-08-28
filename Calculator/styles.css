@@ -1,0 +1,73 @@
+*, *::before,*::after{
+    margin: 0;
+    padding: 0;
+}
+/*ROOT-------------------------------------------------------*/
+:root{
+    --small-button-height: 60px;
+    --small-button-width: 55px;
+    --big-button-height: 60px;
+    --big-button-width: 110px;
+    --output-height:70px;
+    --output-width:220px;
+}
+body{
+    display: flex;
+    justify-content: center;
+    background-color: rgba(10, 10, 10);
+}
+/*Calculator Flex Container-----------------------------*/
+.calculator{
+    display: flex;
+    flex-wrap: wrap;
+    background-color: rgba(10, 10, 50);
+    height: calc((var(--output-height)+(var(--small-button-height)*5)));
+    width: var(--output-width);
+    border: 1px solid rgb(150, 150, 150);
+    border-radius: 5px;
+    position: absolute;
+    top: 20%;
+}
+/*Small Button-------------------------------------*/
+.small{
+    height: var(--small-button-height);
+    width: var(--small-button-width);
+    background-color: transparent;
+    border: 1px solid rgb(150 150 150) ;
+    border-bottom: none;
+    color: rgb(55 240 60);
+}
+/*Big Button------------------------------------*/
+.big{
+    height: var(--big-button-height);
+    width: var(--big-button-width);
+    background-color: transparent;
+    border: 1px solid rgb(150 150 150) ;
+    border-bottom: none;
+    color: rgb(55 240 60);
+}
+/*Output Styling---------------------------------*/
+[data-calculator-output]{
+    display: flex;
+    height: var(--output-height);
+    width: var(--output-width);
+    border-bottom: 1px solid black;
+    color: rgb(55 240 60);
+}
+[data-output-text]{
+    position: absolute;
+    align-self: flex-end;
+    right: 0;
+}
+[data-input-text]{
+    position: absolute;
+    align-self: flex-start;
+    right: 0;
+}
+/*Hover----------------------------------------------*/
+[data-calculator-button]:hover{
+    background-color: black;
+    color: white;
+    border: solid 1px black;
+    cursor: pointer;
+}
